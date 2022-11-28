@@ -15,6 +15,10 @@ class TabunganController extends Controller
     //     return $tabungans;
     // }
 
+    public function formTambahTabungan()
+    {
+        return view('admin.tabungan.tabunganFormTambah');
+    }
     public function index(Request $request)
     {
         if ($request->has('uid')) {
@@ -24,7 +28,6 @@ class TabunganController extends Controller
             $tabungans = Tabungan::all();
             return $tabungans;
         }
-        
     }
 
     public function store(Request $request)
@@ -34,6 +37,7 @@ class TabunganController extends Controller
         $tabungans->total = $request->total;
         $tabungans->tanggal = $request->tanggal;
         $tabungans->save();
+        return back()->with('message', 'Berhasil ditambahkan');
     }
     // public function store(Request $request)
     // {
@@ -54,31 +58,31 @@ class TabunganController extends Controller
     // }
 
 
-    public function update(Request $request, $id){
-        try{
+    public function update(Request $request, $id)
+    {
+        try {
             //menemukan pertanyaan
             $tabungans = Tabungan::find($id);
-            if(!$tabungans){
+            if (!$tabungans) {
                 return response()->json([
                     'message' => 'tabungan tidak ditemukan'
-                ],404);
+                ], 404);
             }
 
             $tabungans->total = $request->total;
-            $tabungans->tanggal= $request->tanggal;
+            $tabungans->tanggal = $request->tanggal;
 
-            
 
-            
+
+
             //update pertanyaan
             $tabungans->save();
 
             //respon json
             return response()->json([
                 'message' => 'Tabungan berhasil diupdate'
-            ],200);
-
-        }catch(\Exception $e){
+            ], 200);
+        } catch (\Exception $e) {
             return response()->json([
                 'message' => "Something went really wrong"
             ]);
@@ -95,7 +99,12 @@ class TabunganController extends Controller
     public function detailTabungan($id)
     {
         $user = User::find($id);
-        return view('tabungan.detail_tabungan',compact('user'));
-    }
+        $tabungan = Tabungan::where('user_id', $id)->get();
 
+        $totalTabungan = 0;
+        foreach($tabungan as $tbg){
+            $totalTabungan += $tbg->total;
+        }
+        return view('tabungan.detail_tabungan', compact('user', 'tabungan', 'totalTabungan'));
+    }
 }

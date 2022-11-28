@@ -99,7 +99,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
 
     // backend tabungan
     Route::get('/tabungan', [TabunganController::class, 'indexTabungan'])->name('admin.tabungan');
-    Route::get('/tabungan/{id}', [Tabungan::class, 'detailTabungan'])->name('admin.tabungan.detail');
+    Route::get('/tabungan/{id}', [TabunganController::class, 'detailTabungan'])->name('admin.tabungan.detail');
+    Route::post('/tabungan/store', [TabunganController::class, 'store'])->name('admin.tabungan.store');
     Route::get('/user/formubahbackend/{id}', [UserController::class, 'formUbahBackend'])->name('admin.user.formubah');
     Route::post('/user/ubah/{id}', [UserController::class, 'ubahBackend'])->name('admin.user.ubah');
     Route::get('/user/hapus/{id}', [UserController::class, 'hapusBackend'])->name('admin.user.hapus');

@@ -2,7 +2,11 @@
 
 @section('content')
     <div class="container-fluid">
-
+        @if (session()->has('message'))
+            <div class="text-center" style="color:green">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">detail User</h1>
         <div class="row">
@@ -12,14 +16,40 @@
                     <!-- Card Header - Dropdown -->
 
                     <!-- Card Body -->
-                    <div class="card-body">
-                        Nama: {{ $tabungan->name ?? 'None' }} <br />
-                        Nomor Hp: {{ $user->email ?? 'None' }}<br />
-                    </div>
-
+                    @foreach ($tabungan as $tabungan)
+                        <div class="card-body">
+                            Nama: {{ $user->name ?? 'None' }} <br />
+                            Tanggal: {{ $tabungan->tanggal ?? 'None' }}<br />
+                            Total: {{ $tabungan->total ?? 'None' }}<br />
+                        </div>
+                    @endforeach
+                    <h6 class="ml-4 text-success">Total Tabungan = {{ $totalTabungan }}</h6>
                 </div>
-                <a href="{{ route('tamb') }}" class="btn btn-success float-right">Tambah Tabungan</a>
+                <button type="button" class="btn btn-success float-right mb-4" onclick="show()">Show Form</button>
+                <form id="form-tambah" class=" d-none" action="{{ route('admin.tabungan.store') }}" method="POST"
+                    style="width: 50%">
+                    @csrf
+
+                    <div class="from-group">
+                        <input class="form-control" type="hidden" name="user_id" value="{{ $user->id }}">
+                        <label for="tanggal">Tanggal Transaksi</label>
+                        <input class="form-control" type="date" name="tanggal" required>
+
+                    </div>
+                    <div class="from-group">
+                        <label for="total">Total</label>
+                        <input class="form-control" type="text" name="total" required>
+
+                    </div>
+                    <input class="btn btn-primary mt-4"type="submit" value="Simpan">
+                </form>
+
             </div>
         </div>
     </div>
 @endsection
+<script>
+    function show() {
+        document.getElementById('form-tambah').classList.remove("d-none");
+    }
+</script>
