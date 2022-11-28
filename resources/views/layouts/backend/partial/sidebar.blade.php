@@ -46,7 +46,7 @@
                 <a class="collapse-item" href={{route('admin.listrik')}}>Voucher Listrik</a>
                 <a class="collapse-item" href={{route('admin.pdam')}}>Pembayaran PDAM</a>
                 <a class="collapse-item" href={{route('admin.cuci')}}>Pencucian Motor/Mobil</a>
-                <a class="collapse-item" href="index.html">Tabungan</a>
+                
             </div>
         </div>
     </li>

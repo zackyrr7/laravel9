@@ -24,7 +24,7 @@
                         </li>
                     @endforeach
                 </ul>
-                <a href="{{route('admin.user.formtambah')}}" class="btn btn-primary">Tambah barang</a>
+                <a href="{{route('admin.user.formtambah')}}" class="btn btn-primary">Tambah User</a>
             </div>
         </div>
     </div>

@@ -19,7 +19,7 @@
     
     </div>
     <div class="form-group">
-        <label for="email">email user</label>
+        <label for="email">Nomor HP user</label>
         <textarea class="form-control" name="email" id="" cols="30" rows="10">
             {{$user->email}}
         </textarea>
