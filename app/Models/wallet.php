@@ -8,11 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class wallet extends Model
 {
     use HasFactory;
-    protected $fillable =[
+    protected $table = 'wallets';
+
+    protected $fillable = [
         'nama',
         'nomor_hp',
         'jenis',
         'no_wallet',
         'total'
     ];
+    public function cairs()
+    {
+        return $this->belongsTo(Cairs::class);
+    }
 }
