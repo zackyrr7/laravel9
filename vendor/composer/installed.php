@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '714244fdc6f77edd3f6bee4eb466b7ab52caf549',
+        'reference' => '529f656d43d66952a91bcada1b4bde93606b09e9',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -349,11 +349,29 @@
                 0 => 'v9.38.0',
             ),
         ),
+        'kkszymanowski/traitor' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => 'c16d90149e807d71562953eb5c9279e75170b63f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../kkszymanowski/traitor',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'laravel/breeze' => array(
+            'pretty_version' => 'v1.15.2',
+            'version' => '1.15.2.0',
+            'reference' => '08ca3c51a95ec70b98ce8d3eab4f810018dff205',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/breeze',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'laravel/framework' => array(
             'pretty_version' => 'v9.38.0',
@@ -367,7 +385,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '714244fdc6f77edd3f6bee4eb466b7ab52caf549',
+            'reference' => '529f656d43d66952a91bcada1b4bde93606b09e9',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -805,6 +823,15 @@
             'replaced' => array(
                 0 => '4.6.0',
             ),
+        ),
+        'santigarcor/laratrust' => array(
+            'pretty_version' => '7.1.0',
+            'version' => '7.1.0.0',
+            'reference' => '8a18c70bb1ced09baed361b68c432b0bedb74f16',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../santigarcor/laratrust',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
             'pretty_version' => '1.0.1',
