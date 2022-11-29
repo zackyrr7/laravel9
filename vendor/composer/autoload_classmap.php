@@ -52,6 +52,7 @@ return array(
     'App\\Http\\Requests\\ProfileUpdateRequest' => $baseDir . '/app/Http/Requests/ProfileUpdateRequest.php',
     'App\\Http\\Requests\\WalletRequest' => $baseDir . '/app/Http/Requests/WalletRequest.php',
     'App\\Models\\Barang' => $baseDir . '/app/Models/Barang.php',
+    'App\\Models\\Cairs' => $baseDir . '/app/Models/Cairs.php',
     'App\\Models\\Permission' => $baseDir . '/app/Models/Permission.php',
     'App\\Models\\Pertanyaan' => $baseDir . '/app/Models/Pertanyaan.php',
     'App\\Models\\Pesan' => $baseDir . '/app/Models/Pesan.php',

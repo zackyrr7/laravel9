@@ -102,9 +102,15 @@ class TabunganController extends Controller
         $tabungan = Tabungan::where('user_id', $id)->get();
 
         $totalTabungan = 0;
-        foreach($tabungan as $tbg){
+        foreach ($tabungan as $tbg) {
             $totalTabungan += $tbg->total;
         }
         return view('tabungan.detail_tabungan', compact('user', 'tabungan', 'totalTabungan'));
+    }
+    public function deleteTabungan(Request $request, $id)
+    {
+        $tabungan = Tabungan::find($id);
+        $tabungan->delete();
+        return back()->with('message', 'Tabungan berhasil dihapus');
     }
 }
