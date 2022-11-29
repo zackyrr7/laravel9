@@ -22,6 +22,8 @@
                             Tanggal: {{ $tabungan->tanggal ?? 'None' }}<br />
                             Total: {{ $tabungan->total ?? 'None' }}<br />
                         </div>
+                        <a class="btn btn-danger col-3"
+                            href="{{ route('admin.tabungan.hapus', ['id' => $tabungan->id]) }}">Hapus</a>
                     @endforeach
                     <h6 class="ml-4 text-success">Total Tabungan = {{ $totalTabungan }}</h6>
                 </div>

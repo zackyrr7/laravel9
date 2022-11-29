@@ -591,6 +591,7 @@ class ComposerStaticInitb9cda8ebf24cc071e01c0ac6038727a6
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
         'App\\Http\\Requests\\WalletRequest' => __DIR__ . '/../..' . '/app/Http/Requests/WalletRequest.php',
         'App\\Models\\Barang' => __DIR__ . '/../..' . '/app/Models/Barang.php',
+        'App\\Models\\Cairs' => __DIR__ . '/../..' . '/app/Models/Cairs.php',
         'App\\Models\\Permission' => __DIR__ . '/../..' . '/app/Models/Permission.php',
         'App\\Models\\Pertanyaan' => __DIR__ . '/../..' . '/app/Models/Pertanyaan.php',
         'App\\Models\\Pesan' => __DIR__ . '/../..' . '/app/Models/Pesan.php',
